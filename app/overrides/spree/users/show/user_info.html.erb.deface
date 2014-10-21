@@ -1,0 +1,5 @@
+<!-- insert_after "[data-hook='account_summary'] #user-info dd:first" -->
+<dt><%= Spree.t(:referral_url) %></dt>
+<dd><input type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
+<dt><%= Spree.t(:users_referred) %></dt>
+<dd><%= @user.referred_count%></dd>
