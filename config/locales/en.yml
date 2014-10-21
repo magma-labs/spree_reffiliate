@@ -1,5 +1,17 @@
 en:
   spree:
+    affiliate_hyperlink: "Affiliate hyperlink"
+    editing_affiliate: "Editing Affiliate:"
+    found: "Found"
+    leave_blank_if_no_partial: "(leave blank if no partial)"
+    no_referred_orders: "No referred orders"
+    no_referred_orders_yet: "No referred orders yet."
+    no_referred_users: "No referred users"
+    no_referred_users_yet: "No referred users yet."
+    not_found: "Not found"
+    orders_referred: "Orders referred"
+    organic: "Organic"
+    partial_status: "Partial Status"
     promotion_rule_types:
       referred_promotion_rule:
         name: "Referred User"
@@ -7,4 +19,11 @@ en:
       affiliated_promotion_rule:
         name: "Affiliate User"
         description: "Must be an affiliated user"
-    editing_affiliate: "Editing Affiliate:" 
+    referred_by: "Referred by"
+    referred_orders: "Referred orders"
+    referred_orders_count: "Referred orders count"
+    referred_users_count: "Referred users count"
+    referral_code: "Referral code"
+    referral_information: "Referral Information"
+    referral_url: "Referral URL"
+    users_referred: "Users referred"
