@@ -1,0 +1,29 @@
+es-MX:
+  spree:
+    affiliate_hyperlink: "Hipervínculo del afiliado"
+    editing_affiliate: "Editando al afiliado:"
+    found: "Encontrado"
+    leave_blank_if_no_partial: "(dejar en blanco si no es parcial)"
+    no_referred_orders: "No hay pedidos referidos"
+    no_referred_orders_yet: "No hay pedidos referidos todavía."
+    no_referred_users: "No hay usuarios referidos"
+    no_referred_users_yet: "No hay usuarios referidos todavía."
+    not_found: "No encontrado"
+    orders_referred: "Pedidos referidos"
+    organic: "Orgánico"
+    partial_status: "Estatus parcial"
+    promotion_rule_types:
+      referred_promotion_rule:
+        name: "Usuario Referido"
+        description: "Debe ser un usuario referido"
+      affiliated_promotion_rule:
+        name: "Usuario afiliado"
+        description: "Debe ser un usuario afiliado"
+    referred_by: "Referido por"
+    referred_orders: "Pedidos referidos"
+    referred_orders_count: "Número de pedidos referidos"
+    referred_users_count: "Número de usuarios referidos"
+    referral_code: "Código de referenciador"
+    referral_information: "Información dereferenciador"
+    referral_url: "URL de referenciador"
+    users_referred: "Usuarios referidos"
