@@ -6,7 +6,7 @@
       <%= error_message_on :user, :name %>
     <% end %>
     <%= f.field_container :partial do %>
-      <%= f.label :partial, Spree.t(:partial) + " (leave blank if no partial) " %>
+      <%= f.label :partial, Spree.t(:partial) + Spree.t(:leave_blank_if_no_partial) %>
       <p>app/views/spree/affiliates/<%= f.text_field :partial %></p>
       <%= f.error_message_on :partial %>
     <% end %>
