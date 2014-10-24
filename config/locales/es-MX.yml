@@ -1,9 +1,15 @@
 es-MX:
   spree:
+    affiliates: "Afiliados"
     affiliate_hyperlink: "Hipervínculo del afiliado"
+    back_to_affiliates_list: "Regresar a lista de afiliados"
     editing_affiliate: "Editando al afiliado:"
     found: "Encontrado"
     leave_blank_if_no_partial: "(dejar en blanco si no es parcial)"
+    layout: "Plantilla"
+    listing_affiliates: "Listado de Afiliados"
+    new_affiliate: "Nuevo Afiliado"
+    no_layout: "Sin Plantilla"
     no_referred_orders: "No hay pedidos referidos"
     no_referred_orders_yet: "No hay pedidos referidos todavía."
     no_referred_users: "No hay usuarios referidos"
@@ -26,4 +32,6 @@ es-MX:
     referral_code: "Código de referenciador"
     referral_information: "Información dereferenciador"
     referral_url: "URL de referenciador"
+    spree_application_layout: "Plantilla de Aplicación Spree (spree_application)"
+    custom_layout_path: "Plantilla con ruta personalizada"
     users_referred: "Usuarios referidos"
