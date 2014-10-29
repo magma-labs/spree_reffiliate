@@ -14,10 +14,11 @@
         <% end %>
       </td>
     </tr>
+    <tr>
       <th><%= Spree.t(:referral_code) %></th>
       <td><%= @user.referral.code %></td>
-    <tr>
     </tr>
+    <tr>
       <th><%= Spree.t(:referred_orders) %></th>
       <td>
         <%= Spree.t(:no_referred_orders_yet) if @user.referral.referred_orders.count == 0 %>
@@ -27,7 +28,7 @@
           <% end %>
         <ol>
       </td>
-    <tr>
+    </tr>
     <tr>
       <th><%= Spree.t(:users_referred) %></th>
       <td>
@@ -38,6 +39,6 @@
           <% end %>
         </ol>
       </td>
-    <tr>
-  </tr>
+    </tr>
+  </table>
 </fieldset>

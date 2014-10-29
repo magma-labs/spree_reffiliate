@@ -1,5 +1,31 @@
 <!-- insert_after "[data-hook='account_summary'] #user-info dd:first" -->
 <dt><%= Spree.t(:referral_url) %></dt>
-<dd><input type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
-<dt><%= Spree.t(:users_referred) %></dt>
-<dd><%= @user.referred_count%></dd>
+<dd><input id="referral_url" type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
+
+<fieldset>
+  <legend><%= Spree.t(:referral_information) %></legend>
+  <table>
+    <tr>
+      <th><%= Spree.t(:referred_by) %></th>
+      <td>
+        <% if @user.referred? %>
+          <%= link_to(@user.referred_by.email, edit_admin_user_url(@user.referred_by)) %>
+        <% elsif @user.affiliate? %>
+          <%= link_to(@user.affiliate.name, edit_admin_affiliate_url(@user.affiliate)) %>
+        <% else %>
+          <%= Spree.t(:organic) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= Spree.t(:users_referred) %></th>
+      <td>
+        <%= Spree.t(:no_referred_users_yet) if @user.referred_count == 0 %>
+        <ol style="margin-left: 20px;">
+          <% @user.referral.referred_users.each do |user| %>
+            <li><%= user.email %></li>
+          <% end %>
+        </ol>
+      </td>
+  </table>
+</fieldset>
