@@ -25,8 +25,8 @@ module Spree
 
       def self.layout_options
         [
-          ["No Layout", "false"],
-          ["Spree Application Layout", 'spree/layouts/spree_application'],
+          [Spree.t(:no_layout), "false"],
+          [Spree.t(:spree_application_layout), 'spree/layouts/spree_application'],
           ["Custom Layout Path", nil]
         ]
       end

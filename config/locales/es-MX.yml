@@ -30,7 +30,7 @@ es-MX:
     referred_orders_count: "Número de pedidos referidos"
     referred_users_count: "Número de usuarios referidos"
     referral_code: "Código de referenciador"
-    referral_information: "Información dereferenciador"
+    referral_information: "Información de referenciador"
     referral_url: "URL de referenciador"
     spree_application_layout: "Plantilla de Aplicación Spree (spree_application)"
     custom_layout_path: "Plantilla con ruta personalizada"
