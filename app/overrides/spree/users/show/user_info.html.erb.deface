@@ -1,8 +1,37 @@
 <!-- insert_after "[data-hook='account_summary'] #user-info dd:first" -->
+<% content_for :head do %>
+  <meta property="og:title" content="<%= Spree.t('social_referral.email.subject') %>" />
+  <meta property="og:site_name" content="<%= referral_url(@user.referral.code) %>" />
+  <meta property="og:type" content="product" />
+  <% unless Spree::Store.where(code: 'spree').first.nil?
+        @host = Spree::Store.where(code: 'spree').first.url 
+        @url = spree.referral_url(@user.referral.code, host: @host)
+      else
+        @url = spree.referral_url(@user.referral.code)
+      end %>
+  <meta property="og:url" content="<%= @url %>" />
+  <meta property="og:description" content="<%= Spree.t('social_referral.email.body') %>" />
+  <meta property="og:image" content="<%= absolute_image_url("/images/emagazine_logo.png") %>" />
+  <meta property="fb:app_id" content="<%= Spree::Config.facebook_app_id %>" />
+<% end %>
 <dt><%= Spree.t(:referral_url) %></dt>
 <dd><input id="referral_url" type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
 <dt><%= Spree.t(:build_your_consumer_network) %></dt>
 <dd><%= mail_to @user.email, Spree.t('social_referral.email.label'), subject: Spree.t('social_referral.email.subject', url: root_url) , bcc: @user.email, body: Spree.t('social_referral.email.body', code: referral_url(@user.referral.code)), id: "share_referral_url_by_email", class:"button" %></dd>
+<dd>
+  <div id="fb-root"></div>
+  <script>
+  (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/<%= I18n.locale == 'es-MX' ? 'es_LA' : 'en_US'%>/sdk.js#xfbml=1&appId=<%= Spree::Config.facebook_app_id %>&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <li class="fb-like" data-href="<%= referral_url(@user.referral.code) %>" data-layout="<%= Spree::Config.facebook_layout %>" data-action="recommend" data-show-faces="<%= Spree::Config.facebook_show_faces %>" data-share="true" data-ref="<%= @user.referral.code%>"></li>
+</dd>
 <fieldset>
   <legend><%= Spree.t(:referral_information) %></legend>
   <table>
