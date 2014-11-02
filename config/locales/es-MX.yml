@@ -35,3 +35,9 @@ es-MX:
     spree_application_layout: "Plantilla de Aplicación Spree (spree_application)"
     custom_layout_path: "Plantilla con ruta personalizada"
     users_referred: "Usuarios referidos"
+    build_your_consumer_network: "Cultiva tu red de consumo"
+    social_referral:
+      email:
+        label: "email"
+        subject: "Acabo de comprar en %{url} afiliate tú también y gana dinero"
+        body: "Es tan fácil como que hagas click en %{code} y te afilies, para que como yo construyas y cultives tu red de consumo."

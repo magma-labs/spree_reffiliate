@@ -1,7 +1,8 @@
 <!-- insert_after "[data-hook='account_summary'] #user-info dd:first" -->
 <dt><%= Spree.t(:referral_url) %></dt>
 <dd><input id="referral_url" type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
-
+<dt><%= Spree.t(:build_your_consumer_network) %></dt>
+<dd><%= mail_to @user.email, Spree.t('social_referral.email.label'), subject: Spree.t('social_referral.email.subject', url: root_url) , bcc: @user.email, body: Spree.t('social_referral.email.body', code: referral_url(@user.referral.code)), id: "share_referral_url_by_email", class:"button" %></dd>
 <fieldset>
   <legend><%= Spree.t(:referral_information) %></legend>
   <table>
