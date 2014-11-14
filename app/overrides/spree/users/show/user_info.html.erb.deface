@@ -13,16 +13,36 @@
   <meta property="og:description" content="<%= Spree.t('social_referral.email.body') %>" />
   <meta property="og:image" content="<%= absolute_image_url("/images/emagazine_logo.png") %>" />
   <meta property="fb:app_id" content="<%= Spree::Config.facebook_app_id %>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="<%= @url %>" />
+  <meta name="twitter:title" content="<%= Spree.t('social_referral.email.subject') %>" />
+  <meta name="twitter:description" content="<%= Spree.t('social_referral.email.body')  %>" />
+  <meta property="twitter:image" content="<%= absolute_image_url("/images/emagazine_logo.png") %>" />
+  <meta name="twitter:url" content="<%= @url %>" />
 <% end %>
 <dt><%= Spree.t(:referral_url) %></dt>
 <dd><input id="referral_url" type='text' value='<%= referral_url(@user.referral.code) %>' onClick='this.select();' /></dd>
-<dt><%= Spree.t(:build_your_consumer_network) %></dt>
-<dd><%= mail_to @user.email, Spree.t('social_referral.email.label'), subject: Spree.t('social_referral.email.subject', url: root_url) , bcc: @user.email, body: Spree.t('social_referral.email.body', code: referral_url(@user.referral.code)), id: "share_referral_url_by_email", class:"button" %></dd>
-<dd>
-  <div id="fb-root"></div>
 
-  <li class="fb-like" data-href="<%= @url %>" data-layout="<%= Spree::Config.facebook_layout %>" data-action="recommend" data-show-faces="<%= Spree::Config.facebook_show_faces %>" data-share="true" data-ref="<%= @user.referral.code%>"></li>
+<dt><%= Spree.t(:build_your_consumer_network) %></dt>
+<dd id="share-network"><ul><li><%= mail_to @user.email, '<i class="fa fa-envelope"></i>'.html_safe, subject: Spree.t('social_referral.email.subject', url: root_url) , bcc: @user.email, body: Spree.t('social_referral.email.body', code: referral_url(@user.referral.code)), id: "share_referral_url_by_email", class:"button" %></li>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1416264331958269&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <li class="fb-like" data-send="true" data-href="<%= @url %>" data-layout="<%= Spree::Config.facebook_layout %>" data-action="recommend" data-show-faces="<%= Spree::Config.facebook_show_faces %>" data-share="true" data-ref="<%= @user.referral.code%>"></li>
+
+  <li><a href="https://twitter.com/share" class="twitter-share-button" data-count="none"><i class="fa fa-twitter-square"></i>&nbsp;</div></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+  </ul>
 </dd>
+
 <fieldset>
   <legend><%= Spree.t(:referral_information) %></legend>
   <table>
