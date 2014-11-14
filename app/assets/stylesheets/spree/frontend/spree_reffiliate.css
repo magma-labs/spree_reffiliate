@@ -4,3 +4,21 @@
 #share_referral_url_by_email{
   padding: 0.5em;
 }
+
+#share-network{
+  position:relative;
+  > ul {
+    width: 70%;
+    > li{
+      float: left;
+      display: list-item;
+      list-style: none;
+      text-align: center;
+      vertical-align: middle;
+      height: 1.4em;
+      margin: 0px;
+      height: 5em;
+      padding-right: 1em;
+    }
+  }
+}
