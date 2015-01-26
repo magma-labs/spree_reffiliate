@@ -1,4 +1,11 @@
 es-MX:
+activerecord:
+  attributes:
+    spree/affiliate:
+      name: Nombre
+      path: Ruta en el Sitio
+      partial: Parcial (Rails Partial)
+      layout: Plantilla
   spree:
     affiliates: "Afiliados"
     affiliate_hyperlink: "Hipervínculo del afiliado"
