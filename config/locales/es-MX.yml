@@ -10,6 +10,7 @@ activerecord:
     affiliates: "Afiliados"
     affiliate_hyperlink: "Hipervínculo del afiliado"
     back_to_affiliates_list: "Regresar a lista de afiliados"
+    build_your_consumer_network: "Cultiva tu red de consumo"
     editing_affiliate: "Editando al afiliado:"
     found: "Encontrado"
     leave_blank_if_no_partial: "(dejar en blanco si no es parcial)"
@@ -42,7 +43,6 @@ activerecord:
     spree_application_layout: "Plantilla de Aplicación Spree (spree_application)"
     custom_layout_path: "Plantilla con ruta personalizada"
     users_referred: "Usuarios referidos"
-    build_your_consumer_network: "Cultiva tu red de consumo"
     social_referral:
       email:
         label: "email"

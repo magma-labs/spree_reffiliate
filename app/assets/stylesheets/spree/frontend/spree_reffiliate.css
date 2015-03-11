@@ -11,14 +11,9 @@
     width: 70%;
     > li{
       float: left;
-      display: list-item;
+      display: inline-table;
       list-style: none;
-      text-align: center;
-      vertical-align: middle;
-      height: 1.4em;
-      margin: 0px;
-      height: 5em;
-      padding-right: 1em;
+      padding: 1em;
     }
   }
 }
